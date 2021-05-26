@@ -18,7 +18,8 @@ function moonClicked() {
       $("#sun").attr("visibility", 'none');
       document.getElementById("LoginForm").style.background = "#191919";
       document.getElementById("forgot").style.color = "white";
-      document.getElementById("input-text").style.color = "white";
+      document.getElementsByClassName("inputBox")[0].style.color = "white";
+      document.getElementsByClassName("inputBox")[1].style.color = "white";
       changeInputColor('white');
       //document.body.append(addCSS);
       $("#Pfad_25").attr("fill", '#191919');
@@ -33,7 +34,8 @@ function moonClicked() {
       $("#sun").attr("visibility", 'hidden');
       document.getElementById("forgot").style.color = "grey";
        document.getElementById("LoginForm").style.background = "#fff";
-       document.getElementById("input-text").style.color = "white";
+       document.getElementsByClassName("inputBox")[0].style.color = "#1F3948";
+       document.getElementsByClassName("inputBox")[1].style.color = "#1F3948";
        changeInputColor('black');
        $("#Pfad_25").attr("fill", 'white');
       darkmode = 0;
