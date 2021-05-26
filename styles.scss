@@ -30,6 +30,11 @@ body{
     }
 }
 
+.logo{
+  margin-top: 10px;
+  position: absolute;
+}
+
 #sun{
   fill: #fdfd96;
   stroke: #fdfd96;
@@ -334,13 +339,25 @@ label{
   }
 }
 
-@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+@media (max-width:801px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
   body {
     background-color: lightblue;
   }
   #LoginIcon{
     display: none;
   }
+  .myForm{
+    display: block;
+text-align: center;
+  }
+
+  .LoginTable{
+    display: inline-block;
+    margin-right: 23%;
+    margin-left: 10%;
+    text-align: left;
+  }
+
 }
 @media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
 @media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
