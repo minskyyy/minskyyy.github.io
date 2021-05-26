@@ -1,0 +1,144 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link href="styles.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+  <script src="script.js"></script>
+
+
+  <meta charset="utf-8">
+
+  <title>MINSKY</title>
+  <meta name="description" content="HTML Site">
+  <meta name="author" content="SitePoint">
+</head>
+<body>
+
+  <nav class="header">
+  <ul class="navheader">
+      <div class="floatleft">
+    <a> Logo </a>
+    </div>
+  <div class="floatright">
+    <li >
+      <circle href="" onclick="loginClicked()" id="circleLogin" class="active">
+        <svg class="svgLogin" xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22">
+          <g class="LoginArrow">
+          <path id="Pfad_14" data-name="Pfad 14" d="M10,17l5-5L10,7" transform="translate(0.425 -1)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          <line id="Linie_15" data-name="Linie 15" x1="12" transform="translate(2 11)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <path id="Pfad_13" data-name="Pfad 13" d="M15,3h4a2,2,0,0,1,2,2V19a2,2,0,0,1-2,2H15" transform="translate(2 -1)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+        </svg>
+      </circle>
+    </li>
+
+    <li>
+      <circle id="circleMoon" onclick="moonClicked()" href="" >
+        <svg class="svgMoon" xmlns="http://www.w3.org/2000/svg" width="26.001" height="26.001" viewBox="0 0 26.001 26.001">
+          <path id="moon" fill="white" stroke="white" d="M27.038,16.081A12.025,12.025,0,1,1,13.957,3,9.353,9.353,0,0,0,27.038,16.081Z" transform="translate(-2.037 -2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+          </svg>
+          <svg class="svgSun" id="sun" transform=translate(9,-25.5) display = "flex" visibility= "hidden" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27">
+
+            <circle id="Ellipse_4" data-name="Ellipse 4" cx="5" cy="5" r="5" transform="translate(8.5 8.5)"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <line id="Linie_29" data-name="Linie 29" y2="2" transform="translate(13.5 1)"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <line id="Linie_30" data-name="Linie 30" y2="2" transform="translate(13.5 24)"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <line id="Linie_31" data-name="Linie 31" x2="1.42" y2="1.42" transform="translate(4.22 4.22)"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <line id="Linie_32" data-name="Linie 32" x2="1.42" y2="1.42" transform="translate(21.36 21.36)"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <line id="Linie_33" data-name="Linie 33" x2="2" transform="translate(1 13.5)"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <line id="Linie_34" data-name="Linie 34" x2="2" transform="translate(24 13.5)"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <line id="Linie_35" data-name="Linie 35" y1="1.42" x2="1.42" transform="translate(4.22 21.36)"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <line id="Linie_36" data-name="Linie 36" y1="1.42" x2="1.42" transform="translate(21.36 4.22)"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+
+          </svg>
+
+
+
+
+
+      </circle>
+
+    </li>
+    <li>
+      <circle id="circleMenu" onclick="navClicked()" href="">
+        <svg class="svgMenu" xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22">
+          <line id="Linie_12" data-name="Linie 12" x2="16" transform="translate(2 11)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          <line id="Linie_13" data-name="Linie 13" x2="16" transform="translate(2 2)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          <line id="Linie_14" data-name="Linie 14" x2="16" transform="translate(2 20)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+        </svg>
+
+      </circle>
+    </li>
+    </div>
+    </ul>
+  </nav>
+<div id="LoginForm">
+
+<div id="LoginInput">
+    <form id="myForm">
+
+      <table class="LoginTable" >
+
+        <tr>
+        <td id=loginText>
+          <a> Login <a>
+        </td>
+        </tr>
+        <tr>
+          <td>
+<i class="feather-mail"></i>
+          <div class="form">
+            <input type="text" class="inputBox" id="email" name="email" required>
+            <label class="content-label">
+              <i id="mailicon" class="fa fa-envelope" style="font-size:10px margin-top:30px;">  </i>
+              <span class="content-name"> email </span>
+            </label>
+          </div>
+
+        </td>
+        </tr>
+          <tr>
+            <td>
+
+              <div class="form">
+                <input class="inputBox" id="input-text" name="email" type="password" required>
+                <label  class="content-label">
+                    <i id="lockicon" class="fa fa-lock" style="font-size:10px;">  </i>
+                  <span class="content-name"> password </span>
+                </label>
+              </div>
+
+            </td>
+          </tr>
+        <tr>
+          <td>
+          <botton id="login_btn" onclick="LoginCheck()" href="" > Login </button>
+          </td>
+      </tr>
+      <tr>
+        <td>
+        <button id="forgot"> Forgot <a id="forgotFocus">Username</a> or <a id="forgotFocus"> Password</a>? </button>
+        </td>
+    </tr>
+      </table>
+    </form>
+</div>
+
+<div id="Navigation">
+
+</div>
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="58.602" height="63.846" viewBox="0 0 58.602 63.846">
+    <path id="Pfad_17" data-name="Pfad 17" d="" transform="translate(61.797 247.272) rotate(180)" fill="#1f3948"/>
+  </svg>
+
+<script src="script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</body>
+</html>
