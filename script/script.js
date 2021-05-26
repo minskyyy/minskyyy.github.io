@@ -74,3 +74,39 @@ function LoginCheck(){
       document.getElementById("password").style.color = "grey";
     }
 }
+
+//Pull down
+var pStart = {x: 0, y:0};
+var pStop = {x:0, y:0};
+
+function swipeStart(e) {
+    if (typeof e['targetTouches'] !== "undefined"){
+        var touch = e.targetTouches[0];
+        pStart.x = touch.screenX;
+        pStart.y = touch.screenY;
+    } else {
+        pStart.x = e.screenX;
+        pStart.y = e.screenY;
+    }
+}
+
+function swipeEnd(e){
+    if (typeof e['changedTouches'] !== "undefined"){
+        var touch = e.changedTouches[0];
+        pStop.x = touch.screenX;
+        pStop.y = touch.screenY;
+    } else {
+        pStop.x = e.screenX;
+        pStop.y = e.screenY;
+    }
+
+    swipeCheck();
+}
+
+function swipeCheck(){
+    var changeY = pStart.y - pStop.y;
+    var changeX = pStart.x - pStop.x;
+    if (isPullDown(changeY, changeX) ) {
+        alert('Swipe Down!');
+    }
+}
