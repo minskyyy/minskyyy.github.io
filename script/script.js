@@ -3,7 +3,12 @@ var element = document.body;
 var pathSun = 'M 27 16.1 A 12 12 90 1 1 27 16 z';
 var pathMoon = 'M27.038,16.081A12.025,12.025,0,1,1,13.957,3,9.353,9.353,0,0,0,27.038,16.081Z';
 var darkmode = 0;
+var navToggled = 0;
 
+function init(){
+
+document.getElementById("LoginForm").style.display = "none";
+}
 
 function moonClicked() {
     element.classList.toggle("dark-mode");
@@ -75,38 +80,31 @@ function LoginCheck(){
     }
 }
 
-//Pull down
-var pStart = {x: 0, y:0};
-var pStop = {x:0, y:0};
+function navClicked(){
+  var x = document.getElementById("Navigation");
+  var top = document.getElementById("topLine");
+  var middle = document.getElementById("middleLine");
+  var bottom = document.getElementById("bottomLine");
 
-function swipeStart(e) {
-    if (typeof e['targetTouches'] !== "undefined"){
-        var touch = e.targetTouches[0];
-        pStart.x = touch.screenX;
-        pStart.y = touch.screenY;
-    } else {
-        pStart.x = e.screenX;
-        pStart.y = e.screenY;
-    }
-}
+  if (navToggled==0) {
+    middle.style.opacity = 0;
+    top.style.transform = 'rotate(-45deg)';
+    bottom.style.transform = 'rotate(45deg)';
+    navToggled = 1;
+  }
+  else
+  {
+    middle.style.opacity = 100;
+    top.style.transform = 'rotate(0deg)';
+    bottom.style.transform = 'rotate(0deg)';
+    navToggled = 0;
+  }
+  
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
 
-function swipeEnd(e){
-    if (typeof e['changedTouches'] !== "undefined"){
-        var touch = e.changedTouches[0];
-        pStop.x = touch.screenX;
-        pStop.y = touch.screenY;
-    } else {
-        pStop.x = e.screenX;
-        pStop.y = e.screenY;
-    }
 
-    swipeCheck();
-}
-
-function swipeCheck(){
-    var changeY = pStart.y - pStop.y;
-    var changeX = pStart.x - pStop.x;
-    if (isPullDown(changeY, changeX) ) {
-        alert('Swipe Down!');
-    }
 }
