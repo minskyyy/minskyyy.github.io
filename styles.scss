@@ -134,19 +134,63 @@ circle:hover > .svgMenu {
  transition-duration: .2s;
 }
 
-@keyframes lineAnimation {
-  0%   { transform: rotate(0deg); }
-  25% { transform: rotate(45deg); }
-  50% { transform: rotate(-45deg); }
-  100% { transform: rotate(0deg); }
+
+.bottomLineadded{
+  transform: translate(4px, 16px) rotate(-45deg);
+  overflow: visible;
+  -webkit-transition-duration: .2s;
+  -moz-transition-duration: .2s;
+  -o-transition-duration: .2s;
+  transition-duration: .2s;
 }
 
-#topLine, #middleLine, #bottomLine {
--webkit-animation: lineAnimation 5s infinite; /* Safari 4+ */
--moz-animation:    lineAnimation 5s infinite; /* Fx 5+ */
--o-animation:      lineAnimation 5s infinite; /* Opera 12+ */
-animation:         lineAnimation 5s infinite; /* IE 10+, Fx 29+ */
+.topLineadded{
+  transform: translate(4px, 5px) rotate(45deg);
+  overflow: visible;
+  -webkit-transition-duration: .2s;
+  -moz-transition-duration: .2s;
+  -o-transition-duration: .2s;
+  transition-duration: .2s;
 }
+
+.middleLineadded{
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -ms-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.middleLineRemoved{
+  opacity: 1;
+  -webkit-transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -ms-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.bottomLineRemoved{
+
+  overflow: visible;
+  -webkit-transition-duration: .2s;
+  -moz-transition-duration: .2s;
+  -o-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.topLineRemoved{
+
+
+  overflow: visible;
+  -webkit-transition-duration: .2s;
+  -moz-transition-duration: .2s;
+  -o-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+
 
 //Login Form
 

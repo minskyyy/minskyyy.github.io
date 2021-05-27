@@ -87,24 +87,28 @@ function navClicked(){
   var bottom = document.getElementById("bottomLine");
 
   if (navToggled==0) {
-    middle.style.opacity = 0;
-    top.style.transform = 'rotate(-45deg)';
-    bottom.style.transform = 'rotate(45deg)';
+    top.classList.add("topLineadded");
+    middle.classList.add("middleLineadded");
+    bottom.classList.add("bottomLineadded");
+
+    top.classList.remove("topLineRemoved");
+    middle.classList.remove("middleLineRemoved");
+    bottom.classList.remove("bottomLineRemoved");
+
     navToggled = 1;
   }
   else
   {
-    middle.style.opacity = 100;
-    top.style.transform = 'rotate(0deg)';
-    bottom.style.transform = 'rotate(0deg)';
+    top.classList.remove("topLineadded");
+    middle.classList.remove("middleLineadded");
+    bottom.classList.remove("bottomLineadded");
+
+    top.classList.add("topLineRemoved");
+    middle.classList.add("middleLineRemoved");
+    bottom.classList.add("bottomLineRemoved");
     navToggled = 0;
   }
-  
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+
 
 
 }
